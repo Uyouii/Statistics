@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bar_chart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="experment.zju.statistics.BarChartActivity">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barchart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ActionBarList2"
+        android:layout_below="@+id/buttonbarchart2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145px"
+        android:id="@+id/buttonbarchart2"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="DAY"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/daybuttonchart2"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:text="WEEK"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekbuttonchart2"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:text="MONTH"
+            android:layout_width="0px"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/monthbuttonchart2"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:text="YEAR"
+            android:layout_width="0px"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/yearbuttonchart2"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145px"
+        android:id="@+id/ActionBarList2"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <Button
+            android:text="Pie"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/PieButton2" />
+        <Button
+            android:text="Bar"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/BarButton2"/>
+        <Button
+            android:text="List"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/ListButton2"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

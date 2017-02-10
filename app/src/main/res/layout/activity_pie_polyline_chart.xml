@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parent">
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttonbarchart1"
+        android:layout_above="@+id/ActionBarList1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145px"
+        android:id="@+id/buttonbarchart1"
+        android:orientation="horizontal">
+
+        <Button
+            android:text="DAY"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/daybuttonchart1"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+
+        <Button
+            android:text="WEEK"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekbuttonchart1"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:text="MONTH"
+            android:layout_width="0px"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/monthbuttonchart1"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:text="YEAR"
+            android:layout_width="0px"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/yearbuttonchart1"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewchart"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145px"
+        android:id="@+id/ActionBarList1"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <Button
+            android:text="Pie"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/PieButton1" />
+        <Button
+            android:text="Bar"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/BarButton1"/>
+        <Button
+            android:text="List"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_layout"
+            android:textColor="@color/white"
+            android:id="@+id/ListButton1"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
