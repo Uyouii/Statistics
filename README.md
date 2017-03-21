@@ -8,5 +8,5 @@
 
 > 效果图片：
 
-![](https://github.com/TaiyouDong/Statistics/picture/chart1.png)
+![](https://github.com/TaiyouDong/Statistics/blob/master/picture/chart1.png)
 
