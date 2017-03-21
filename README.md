@@ -10,9 +10,9 @@
 
 > list显示应用使用时间及次数
 ![](https://github.com/TaiyouDong/Statistics/blob/master/picture/list.png)
-
+  
 > 扇形统计图显示使用情况
 ![](https://github.com/TaiyouDong/Statistics/blob/master/picture/chart1.png)
-
+  
 > 条形统计图显示使用情况
 ![](https://github.com/TaiyouDong/Statistics/blob/master/picture/chart2.png)
