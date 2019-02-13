@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 
 
 public class AppInformation {
@@ -17,7 +18,7 @@ public class AppInformation {
     private int times;
 
 
-    public AppInformation(UsageStats usageStats , Context context) {
+    public AppInformation(UsageStats usageStats, Context context) {
         this.usageStats = usageStats;
         this.context = context;
 
@@ -31,7 +32,7 @@ public class AppInformation {
     private void GenerateInfo() throws PackageManager.NameNotFoundException, NoSuchFieldException, IllegalAccessException {
         PackageManager packageManager = context.getPackageManager();
         this.packageName = usageStats.getPackageName();
-        if(this.packageName != null && !this.packageName.equals("")) {
+        if (this.packageName != null && !this.packageName.equals("")) {
             ApplicationInfo applicationInfo = packageManager.getApplicationInfo(this.packageName, 0);
             this.label = (String) packageManager.getApplicationLabel(applicationInfo);
             this.UsedTimebyDay = usageStats.getTotalTimeInForeground();
@@ -75,5 +76,52 @@ public class AppInformation {
         return packageName;
     }
 
+    private long timeStampMoveToForeground = -1;
+
+    private long timeStampMoveToBackGround = -1;
+
+
+    public void setTimeStampMoveToForeground(long timeStampMoveToForeground) {
+//        if (timeStampMoveToForeground > bootTime()){
+//            timesPlusPlus();
+//        }
+        this.timeStampMoveToForeground = timeStampMoveToForeground;
+    }
+
+    public void timesPlusPlus(){
+        times++;
+    }
+
+    public void setTimeStampMoveToBackGround(long timeStampMoveToBackGround) {
+        this.timeStampMoveToBackGround = timeStampMoveToBackGround;
+    }
+
+    public long getTimeStampMoveToBackGround() {
+        return timeStampMoveToBackGround;
+    }
+
+    public long getTimeStampMoveToForeground() {
+        return timeStampMoveToForeground;
+    }
+
+    public void calculateRunningTime() {
+
+        if (timeStampMoveToForeground < 0 || timeStampMoveToBackGround < 0) {
+            return;
+        }
+
+        if (timeStampMoveToBackGround > timeStampMoveToForeground) {
+            UsedTimebyDay += (timeStampMoveToBackGround - timeStampMoveToForeground);
+            timeStampMoveToForeground = -1;
+            timeStampMoveToBackGround = -1;
+        }
+
+    }
+
+
+    // 返回开机时间，单位微妙
+    public static long bootTime() {
+        return System.currentTimeMillis() - SystemClock.elapsedRealtime();
+    }
 
 }
